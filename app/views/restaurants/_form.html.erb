@@ -1,7 +1,13 @@
-<%= simple_form_for(restaurant) do |f| %>
+<%= simple_form_for(@restaurant) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence %>
+<div class="form-input">
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :category %>
-  <%= f.input :phone_number %>
-  <%= f.submit %>
+  </div>
+
+  <div class="form-action">
+  <%= f.button :submit %>
+  </div>
 <% end %>
